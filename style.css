@@ -358,3 +358,254 @@ body {
         height: 150px;
     }
 }
+
+/* 第三部分：关于我 */
+.about-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    height: auto;
+    padding: 80px 0;
+}
+
+.about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.about-content {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 头像和基本信息 */
+.about-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #667eea;
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.basic-info {
+    flex: 1;
+}
+
+.name {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.nickname {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.intro {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* 各个区块 */
+.about-section-block {
+    margin-bottom: 40px;
+}
+
+.section-subtitle {
+    font-size: 24px;
+    color: #667eea;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 4px solid #667eea;
+}
+
+.section-text {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    padding-left: 15px;
+}
+
+.section-text strong {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* 技能列表 */
+.skills-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 15px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-icon {
+    font-size: 32px;
+}
+
+.skill-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 作品列表 */
+.works-list {
+    list-style: none;
+    padding-left: 15px;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover {
+    transform: translateX(10px);
+}
+
+.work-icon {
+    font-size: 28px;
+}
+
+.work-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* 联系方式 */
+.contact-block {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 50px;
+}
+
+.contact-block .section-subtitle {
+    color: white;
+    border-left-color: white;
+}
+
+.contact-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-left: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.contact-icon {
+    font-size: 32px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-value {
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+}
+
+/* 响应式设计 - 关于我部分 */
+@media (max-width: 768px) {
+    .about-content {
+        padding: 30px 20px;
+    }
+
+    .about-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .name {
+        font-size: 26px;
+    }
+
+    .skills-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-list {
+        grid-template-columns: 1fr;
+    }
+
+    .about-title {
+        font-size: 28px;
+    }
+
+    .section-subtitle {
+        font-size: 20px;
+    }
+}
