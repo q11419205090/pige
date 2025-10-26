@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人主页</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 导航菜单 -->
+    <nav class="navbar">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#favorites" class="nav-link active">梦想</a></li>
+            <li class="nav-item"><a href="#space" class="nav-link">空间</a></li>
+            <li class="nav-item"><a href="#about" class="nav-link">关于我</a></li>
+        </ul>
+    </nav>
+
+    <!-- 第一部分：喜爱东西的展示 -->
+    <section id="favorites" class="section">
+        <div class="slider-container">
+            <!-- 左右切换按钮 -->
+            <button class="nav-btn prev-btn" aria-label="上一张">‹</button>
+            <button class="nav-btn next-btn" aria-label="下一张">›</button>
+
+            <div class="slide active">
+                <img src="不可能这三字说的太多了.png" alt="星游记">
+                <div class="quote-container">
+                    <div class="quote"></div>
+                    <div class="source"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="困境.png" alt="星游记">
+                <div class="quote-container">
+                    <div class="quote"></div>
+                    <div class="source"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="热血.png" alt="星游记">
+                <div class="quote-container">
+                    <div class="quote"></div>
+                    <div class="source"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="ScreenShot_2025-10-23_193636_039.png" alt="星游记">
+                <div class="quote-container">
+                    <div class="quote"></div>
+                    <div class="source"></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 第二部分：空间 -->
+    <section id="space" class="section space-section">
+        <div class="space-container">
+            <h2 class="space-title">我的空间</h2>
+            <div id="timeline" class="timeline">
+                <!-- 动态内容将通过JavaScript动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 图片查看器（点击放大） -->
+    <div id="imageViewer" class="image-viewer">
+        <span class="close-viewer">&times;</span>
+        <img class="viewer-image" src="" alt="查看大图">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

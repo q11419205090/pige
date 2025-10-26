@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* 导航菜单 */
+.navbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    padding: 30px 40px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+/* 轮播容器 */
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 单个幻灯片 */
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 金句容器 */
+.quote-container {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.quote {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.source {
+    font-size: 16px;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+/* 进度条 */
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 20;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: #fff;
+    transition: width linear;
+}
+
+.slide.active .progress-fill {
+    animation: progress 8s linear forwards;
+}
+
+@keyframes progress {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* 左右切换按钮 */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.3);
+    color: white;
+    border: none;
+    font-size: 48px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 30;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.nav-btn:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+/* 第二部分：空间 */
+.space-section {
+    background: linear-gradient(135deg, #87CEEB 0%, #B0E0E6 100%);
+    min-height: 100vh;
+    height: auto;
+    padding: 80px 0;
+}
+
+.space-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.space-title {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 动态卡片 */
+.post-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.post-date {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.post-date::before {
+    content: "📅";
+}
+
+.post-content {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    white-space: pre-wrap;
+}
+
+/* 图片网格 */
+.post-images {
+    display: grid;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* 1张图片 */
+.post-images.count-1 {
+    grid-template-columns: 1fr;
+}
+
+/* 2张图片 */
+.post-images.count-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* 3张图片 */
+.post-images.count-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* 4张及以上图片 */
+.post-images.count-4,
+.post-images.count-5,
+.post-images.count-6,
+.post-images.count-7,
+.post-images.count-8,
+.post-images.count-9 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.post-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.post-image:hover {
+    transform: scale(1.05);
+}
+
+/* 图片查看器 */
+.image-viewer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-viewer.active {
+    display: flex;
+}
+
+.viewer-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-viewer:hover {
+    transform: scale(1.2);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .quote-container {
+        bottom: 40px;
+        left: 20px;
+        right: 20px;
+    }
+
+    .quote {
+        font-size: 20px;
+    }
+
+    .source {
+        font-size: 14px;
+    }
+
+    .space-title {
+        font-size: 28px;
+    }
+
+    .post-card {
+        padding: 20px;
+    }
+
+    .post-images.count-3,
+    .post-images.count-4,
+    .post-images.count-5,
+    .post-images.count-6,
+    .post-images.count-7,
+    .post-images.count-8,
+    .post-images.count-9 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .post-image {
+        height: 150px;
+    }
+}
